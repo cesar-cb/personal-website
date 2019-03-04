@@ -2,5 +2,5 @@
 
 Todo:
 
-- [ ] Add Google analytics :bar_chart:
+- [ ] Add Google Analytics :bar_chart:
 - [ ] Figure out a way to display projects and routing :file_folder:
