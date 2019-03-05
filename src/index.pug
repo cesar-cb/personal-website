@@ -5,8 +5,10 @@ html(lang="pt-BR")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     meta(name="theme-color", content="#000000")
+    meta(name="description", content="Cesar Boaventura, Front-End Engineer")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Mono")
     link(rel="stylesheet", href="./styles/index.styl")
+    script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-72774159-1")
     title Cesar Boaventura • Front-End Engineer
   body
     #particles
@@ -31,10 +33,32 @@ html(lang="pt-BR")
       footer#main-footer
         .social-media
           h3 Contact Me Via:
-          a.linkedin(href="https://www.linkedin.com/in/cesar-boaventura/", target="_blank")
-          a.github(href="https://github.com/cesar-cb", target="_blank")
-          a.mail(href="mailto:contact@cesarboaventura.dev")
-
+          a(
+            href="https://www.linkedin.com/in/cesar-boaventura/",
+            target="_blank",
+            rel="noreferrer",
+            class="linkedin",
+            data-track-id="linkedin"
+          )
+          a(
+            href="https://github.com/cesar-cb",
+            target="_blank",
+            rel="noreferrer",
+            class="github",
+            data-track-id="github"
+          )
+          a(
+            href="mailto:contact@cesarboaventura.dev",
+            class="mail",
+            data-track-id="mail"
+          )
 
     script(src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
     script(src="./scripts/particles.js")
+    script(src="./scripts/ga.js")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-72774159-1');
