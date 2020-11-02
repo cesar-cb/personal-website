@@ -1,3 +1,3 @@
-import './ga';
-import './particles';
-import './dynamicData';
+import "./ga";
+import "./particles";
+import "./dynamicDate";
