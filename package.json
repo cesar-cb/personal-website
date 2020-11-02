@@ -18,5 +18,9 @@
     "prettier": "^2.1.2",
     "pug": "^2.0.4",
     "stylus": "^0.54.7"
+  },
+  "dependencies": {
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2"
   }
 }
