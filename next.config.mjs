@@ -13,10 +13,11 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: `
       @import "variables.scss";
+      @import "functions.scss";
       @import "placeholders.scss";
-      @import "mixins.scss";
     `,
   },
+  pageExtensions: ['page.tsx', 'api.tsx'],
 }
 
 export default nextConfig

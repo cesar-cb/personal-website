@@ -1,0 +1,22 @@
+$font-family-primary: 'Space Grotesk', sans-serif;
+$font-family-secondary: 'Spectral', serif;
+
+$heading-font-family: $font-family-primary;
+$body-font-family: $font-family-secondary;
+
+$base-font-size: 1rem;
+
+$black: #000000;
+$white: #ffffff;
+
+$primary-color-dark: $black;
+$secondary-color-dark: $white;
+
+$primary-color-light: $white;
+$secondary-color-light: $black;
+
+$dark-theme-background: $primary-color-dark;
+$dark-theme-text: $secondary-color-dark;
+
+$light-theme-background: $secondary-color-dark;
+$light-theme-text: $primary-color-dark;
