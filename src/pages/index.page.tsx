@@ -1,7 +1,6 @@
 import Header from 'components/Header/Header'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
@@ -19,10 +18,6 @@ const Home: NextPage = () => {
       <main>
         <h1>Main</h1>
       </main>
-
-      <footer className={styles.footer}>
-        <p>Footer</p>
-      </footer>
     </div>
   )
 }
