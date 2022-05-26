@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: spacing(8);
+}
+
+.logo {
+  @extend %h3;
+  font-family: $heading-font-family;
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit;
+}

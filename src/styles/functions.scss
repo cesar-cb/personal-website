@@ -1,0 +1,5 @@
+$SPACING_BASE: 4px !default;
+
+@function spacing($level) {
+  @return $SPACING_BASE * $level;
+}
