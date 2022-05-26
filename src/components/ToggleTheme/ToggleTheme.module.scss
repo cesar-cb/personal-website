@@ -1,0 +1,48 @@
+.button {
+  width: 2.5rem;
+  height: 2.5rem;
+  box-shadow: $box-shadow;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: rgba(226, 232, 240, 0);
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+  overflow: hidden;
+}
+
+.iconsContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+
+  &.darkActive {
+    transform: translateY(-37px);
+  }
+
+  &.lightActive {
+    transform: translateY(37px);
+  }
+}
+
+.icon {
+  &.dark {
+    path {
+      stroke: var(--primary-color);
+    }
+  }
+
+  &.light {
+    margin-top: 50px;
+    path {
+      stroke: var(--primary-color);
+    }
+  }
+}

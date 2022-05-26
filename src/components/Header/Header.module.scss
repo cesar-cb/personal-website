@@ -1,14 +1,21 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: spacing(8);
 }
 
 .logo {
-  @extend %h3;
+  @extend %h4;
   font-family: $heading-font-family;
   text-decoration: none;
   font-weight: 700;
   color: inherit;
+  letter-spacing: 0.3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: $max-container-size;
+  margin: 0 auto;
 }
