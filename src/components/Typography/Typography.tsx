@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC, ReactNode, createElement } from 'react'
 import styles from './Typography.module.scss'
 
@@ -12,24 +13,33 @@ const variantsMapping = {
   span: 'span',
 }
 
-type TElements = keyof typeof variantsMapping
+export type TTypographyElements = keyof typeof variantsMapping
 
 type TProps = {
-  variant?: TElements
-  as?: TElements
+  variant?: TTypographyElements
+  as?: TTypographyElements
   children: ReactNode
+  className?: string
+  lineHeight?: string
 }
 
 const Typography: FC<TProps> = ({
   variant = 'p',
   as,
   children,
+  className = '',
 }): JSX.Element => {
   const variantType = as || variant
 
   const Component = createElement(
     variantsMapping[variant],
-    { className: styles[`typography--variant-${variantType}`] },
+    {
+      className: classNames(
+        styles.typography,
+        styles[`typography--variant-${variantType}`],
+        className,
+      ),
+    },
     children,
   )
 

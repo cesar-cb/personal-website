@@ -1,6 +1,10 @@
-import ToggleTheme from 'components/ToggleTheme'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import styles from './Header.module.scss'
+
+const ToggleTheme = dynamic(() => import('components/ToggleTheme'), {
+  ssr: false,
+})
 
 const Header = () => {
   return (

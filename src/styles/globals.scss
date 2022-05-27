@@ -3,6 +3,8 @@
 :root {
   --primary-color: #{$primary-color-light};
   --secondary-color: #{$secondary-color-light};
+  --tertiary-color: #{$tertiary-color-light};
+  --quaternary-color: #{$quaternary-color-light};
   --background-color: #{$light-theme-background};
   --text-color: #{$light-theme-text};
 }
@@ -10,6 +12,8 @@
 [data-theme='dark'] {
   --primary-color: #{$primary-color-dark};
   --secondary-color: #{$secondary-color-dark};
+  --tertiary-color: #{$tertiary-color-dark};
+  --quaternary-color: #{$quaternary-color-dark};
   --background-color: #{$dark-theme-background};
   --text-color: #{$dark-theme-text};
 }
@@ -19,7 +23,7 @@ body {
   font-family: $font-family-secondary;
   color: var(--text-color);
   background-color: var(--background-color);
-  transition: background-color 0.3s ease-in-out;
+  transition: $body-theme-transition;
 }
 
 h1,
@@ -29,6 +33,14 @@ h4,
 h5,
 h6 {
   font-family: $heading-font-family;
+  font-weight: 700;
+  line-height: 2.1rem;
+  letter-spacing: 0.15rem;
+}
+
+p {
+  line-height: 1.8rem;
+  letter-spacing: 0.15rem;
 }
 
 h1 {
@@ -55,14 +67,23 @@ h6 {
   @extend %h6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
+// span,
+// a {
+//   transition: $text-theme-transition 0s;
+// }
+
 a {
-  transition: color 0.3s ease-in-out;
+  font-size: 1rem;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
 }

@@ -1,3 +1,6 @@
+.typography {
+}
+
 .typography--variant-h1 {
   font-size: 3.052rem;
 }
@@ -20,4 +23,11 @@
 
 .typography--variant-h6 {
   font-size: 1rem;
+}
+
+.typography--variant-p {
+  font-size: 1rem;
+  font-family: $font-family-secondary;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
 }

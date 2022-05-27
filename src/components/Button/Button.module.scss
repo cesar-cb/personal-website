@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: spacing(3) spacing(6);
+  font-size: 1rem;
+  font-family: $font-family-primary;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+
+  span {
+    display: inline-block;
+    margin-left: spacing(2);
+    transition: border $theme-transition, transform $theme-transition;
+  }
+
+  &:hover {
+    span {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
