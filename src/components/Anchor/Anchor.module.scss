@@ -3,12 +3,6 @@
   width: fit-content;
   cursor: pointer;
 
-  span {
-    display: inline-block;
-    margin-left: spacing(2);
-    transition: border $theme-transition, transform $theme-transition;
-  }
-
   &:hover {
     .arrow {
       transform: translateX(4px);
