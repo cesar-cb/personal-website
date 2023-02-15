@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Typography, { TTypographyElements } from 'components/Typography'
-import Link from 'components/Link'
+import Anchor from 'components/Anchor'
 import NextLink from 'next/link'
 import classNames from 'classnames'
 import styles from './SectionTitle.module.scss'
@@ -36,9 +36,9 @@ const SectionTitle: FC<TProps> = ({
         {title}
       </Typography>
       {href && text && (
-        <Link href={href} {...restLink}>
+        <Anchor href={href} {...restLink}>
           {text}
-        </Link>
+        </Anchor>
       )}
     </>
   )

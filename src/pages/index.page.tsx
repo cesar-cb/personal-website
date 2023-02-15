@@ -1,5 +1,5 @@
 import Button from 'components/Button'
-import Link from 'components/Link'
+import Anchor from 'components/Anchor'
 import PostPreview from 'components/PostPreview'
 import SectionTitle from 'components/SectionTitle'
 import Typography from 'components/Typography'
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <Typography variant="h1" as="h3" className={styles.headline}>
           Front-end developer. <br /> Passionate about code and solutions
         </Typography>
-        <Link href="/about">About me</Link>
+        <Anchor href="/about">About me</Anchor>
         <section className={styles.postsContainer}>
           <div className={styles.articles}>
             <SectionTitle
@@ -49,14 +49,9 @@ const Home: NextPage = () => {
               }}
               className={styles.articleItem}
             />
-            <Link
-              href="/articles"
-              asButton
-              buttonProps={{ outline: true }}
-              passHref
-            >
+            <Button href="/articles" element="a" outline arrow>
               view all articles
-            </Link>
+            </Button>
           </div>
 
           <div className={styles.projects}>
@@ -83,14 +78,9 @@ const Home: NextPage = () => {
               }}
               className={styles.articleItem}
             />
-            <Link
-              href="/projects"
-              asButton
-              buttonProps={{ outline: true }}
-              passHref
-            >
+            <Button href="/projects" outline arrow>
               view all projects
-            </Link>
+            </Button>
           </div>
         </section>
       </DefaultLayout>

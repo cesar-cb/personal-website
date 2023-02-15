@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Typography from 'components/Typography'
-import Link from 'components/Link'
+import Anchor from 'components/Anchor'
 import NextLink from 'next/link'
 import { BiTag } from 'react-icons/bi'
 import styles from './PostPreview.module.scss'
@@ -24,7 +24,7 @@ const SectionTitle: FC<TProps> = ({
   link: { href, ...restLink },
 }) => {
   return (
-    <Link href={href} hideArrow className={className} {...restLink}>
+    <Anchor href={href} hideArrow className={className} {...restLink}>
       <Typography variant="h3" as="h4" className={styles.title}>
         {title}
       </Typography>
@@ -32,7 +32,7 @@ const SectionTitle: FC<TProps> = ({
       <span className={styles.tags}>
         <BiTag className={styles.tagIcon} size={15} /> {tags.join(', ')}
       </span>
-    </Link>
+    </Anchor>
   )
 }
 

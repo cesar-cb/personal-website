@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link href="/">
-          <a className={styles.logo}>CESAR BOAVENTURA</a>
+        <Link href="/" className={styles.logo}>
+          CESAR BOAVENTURA
         </Link>
         <ToggleTheme />
       </div>
