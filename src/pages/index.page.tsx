@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               }}
               className={styles.articleItem}
             />
-            <Button href="/articles" element="a" outline arrow>
+            <Button href="/posts?type=article" element="a" outline arrow>
               view all articles
             </Button>
           </div>
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
               }}
               className={styles.articleItem}
             />
-            <Button href="/projects" outline arrow>
+            <Button href="/posts?type=project" element="a" outline arrow>
               view all projects
             </Button>
           </div>
