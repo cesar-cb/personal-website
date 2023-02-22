@@ -20,7 +20,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Spectral&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito:wght@600;700&family=Raleway:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;700&family=Spectral&display=swap"
             rel="stylesheet"
           />
           <link

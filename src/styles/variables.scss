@@ -1,5 +1,5 @@
-$font-family-primary: 'Space Grotesk', sans-serif;
-$font-family-secondary: 'Spectral', serif;
+$font-family-primary: 'Nunito', sans-serif;
+$font-family-secondary: 'Lora', serif;
 
 $heading-font-family: $font-family-primary;
 $body-font-family: $font-family-secondary;
@@ -8,12 +8,20 @@ $base-font-size: 1rem;
 
 $black: #000000;
 $white: #ffffff;
+$light-green: #6fffdc;
+$light-orange: #ff5f5f;
+$dark-blue: #004dc1;
+$dark-red: #900000;
 
 $primary-color-dark: $black;
 $secondary-color-dark: $white;
+$tertiary-color-dark: $light-green;
+$quaternary-color-dark: $light-orange;
 
 $primary-color-light: $white;
 $secondary-color-light: $black;
+$tertiary-color-light: $dark-blue;
+$quaternary-color-light: $dark-red;
 
 $dark-theme-background: $primary-color-dark;
 $dark-theme-text: $secondary-color-dark;
@@ -23,4 +31,8 @@ $light-theme-text: $primary-color-dark;
 
 $box-shadow: 0px 2px 2px rgb(0 0 0 / 20%), 0px 5px 12px rgb(0 0 0 / 10%);
 
-$max-container-size: 1200px;
+$max-container-size: 1440px;
+
+$theme-transition: 0.35s ease-in-out 0s;
+$body-theme-transition: color $theme-transition, background $theme-transition;
+$text-theme-transition: color $theme-transition;

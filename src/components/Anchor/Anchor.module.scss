@@ -1,0 +1,17 @@
+.anchor {
+  display: inline-block;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    .arrow {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: spacing(2);
+  transition: border $theme-transition, transform $theme-transition;
+}

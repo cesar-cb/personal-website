@@ -1,0 +1,42 @@
+.headline {
+  margin-bottom: spacing(6);
+  line-height: 2.7rem;
+}
+
+.postsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: spacing(8);
+  margin-top: spacing(22);
+
+  @media screen and (max-width: 768px) {
+    margin-top: spacing(12);
+
+    flex-direction: column;
+  }
+}
+
+.articles {
+  @media screen and (max-width: 768px) {
+    border-bottom: 1px solid $white;
+    padding-bottom: spacing(8);
+  }
+}
+
+.articles,
+.projects {
+  max-width: 570px;
+}
+
+.articleTitle {
+  margin-bottom: spacing(5);
+}
+
+.articleItem {
+  display: block;
+  margin-bottom: spacing(12);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -26,13 +26,11 @@ const ToggleTheme = () => {
       <div className={iconsContainerClasses}>
         <GrSun
           size={25}
-          aria-hidden={resolvedTheme === 'dark' ? 'true' : 'false'}
           className={darkClasses}
           title="Toggle between dark and light mode"
         />
         <GrMoon
           size={25}
-          aria-hidden={resolvedTheme === 'light' ? 'true' : 'false'}
           className={lightClasses}
           title="Toggle between dark and light mode"
         />
