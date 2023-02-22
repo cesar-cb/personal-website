@@ -8,6 +8,19 @@
   justify-content: space-between;
   gap: spacing(8);
   margin-top: spacing(22);
+
+  @media screen and (max-width: 768px) {
+    margin-top: spacing(12);
+
+    flex-direction: column;
+  }
+}
+
+.articles {
+  @media screen and (max-width: 768px) {
+    border-bottom: 1px solid $white;
+    padding-bottom: spacing(8);
+  }
 }
 
 .articles,
