@@ -1,4 +1,9 @@
-.typography {
+.typography--variant-heading-font {
+  font-family: $heading-font-family !important;
+}
+
+.typography--variant-body-font {
+  font-family: $body-font-family !important;
 }
 
 .typography--variant-h1 {
@@ -30,4 +35,9 @@
   font-family: $font-family-secondary;
   font-weight: 500;
   letter-spacing: 0.1rem;
+}
+
+.typography--variant-label {
+  font-size: 0.75rem;
+  font-weight: 500;
 }

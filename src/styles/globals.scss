@@ -5,6 +5,7 @@
   --secondary-color: #{$secondary-color-light};
   --tertiary-color: #{$tertiary-color-light};
   --quaternary-color: #{$quaternary-color-light};
+  --gray-color: #{$dark-gray};
   --background-color: #{$light-theme-background};
   --text-color: #{$light-theme-text};
 }
@@ -14,6 +15,7 @@
   --secondary-color: #{$secondary-color-dark};
   --tertiary-color: #{$tertiary-color-dark};
   --quaternary-color: #{$quaternary-color-dark};
+  --gray-color: #{$light-gray};
   --background-color: #{$dark-theme-background};
   --text-color: #{$dark-theme-text};
 }
@@ -86,4 +88,12 @@ a {
   color: inherit;
   text-decoration: none;
   letter-spacing: 0.1rem;
+}
+
+pre {
+  font-family: monospace;
+}
+
+img {
+  max-width: 100%;
 }
