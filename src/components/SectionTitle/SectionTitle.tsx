@@ -21,7 +21,7 @@ const SectionTitle: FC<TProps> = ({
   title,
   link: { href, text, ...restLink } = {},
   as = 'h4',
-  variant = 'h2',
+  variant = 'p',
   color = 'secondary',
   className,
 }) => {
@@ -32,7 +32,12 @@ const SectionTitle: FC<TProps> = ({
 
   return (
     <>
-      <Typography variant={variant} as={as} className={titleClasses}>
+      <Typography
+        variant={variant}
+        as={as}
+        className={titleClasses}
+        font="heading"
+      >
         {title}
       </Typography>
       {href && text && (

@@ -1,0 +1,9 @@
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(15);
+}
+
+.boxWrapper {
+  width: 100%;
+}

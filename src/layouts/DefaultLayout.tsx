@@ -1,17 +1,25 @@
-import { FC, ReactNode } from 'react'
-import Header from 'components/Header/Header'
+import { FC, PropsWithChildren, ReactNode } from 'react'
+import Header from 'components/Header'
 import styles from './Layout.module.scss'
+import classNames from 'classnames'
 
 type TProps = {
-  children: ReactNode
+  small?: boolean
 }
 
-const DefaultLayout: FC<TProps> = ({ children }) => {
+const DefaultLayout: FC<PropsWithChildren<TProps>> = ({
+  children,
+  small = false,
+}) => {
+  const classes = classNames(styles.defaultLayoutContainer, {
+    [styles.small]: small,
+  })
+
   return (
     <>
       <Header />
       <div className={styles.layoutWrapper}>
-        <main className={styles.defaultLayoutContainer}>{children}</main>
+        <main className={classes}>{children}</main>
       </div>
       {/* <footer>footer</footer> */}
     </>
