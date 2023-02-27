@@ -1,2 +1,9 @@
-export const pluralize = (count: number, noun: string, suffix = 's') =>
-  `${count} ${noun}${count !== 1 ? suffix : ''}`
+export const pluralize = ({
+  count,
+  noun,
+  suffix = 's',
+}: {
+  count: number
+  noun: string
+  suffix?: string
+}) => `${count} ${noun}${count !== 1 ? suffix : ''}`

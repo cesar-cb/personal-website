@@ -1,11 +1,9 @@
 import { NextPage } from 'next'
 import Anchor from 'components/Anchor'
-import Box from 'components/Box'
 import PostPreview from 'components/PostPreview'
 import DefaultLayout from 'layouts/DefaultLayout'
 import { getAllPublished } from 'lib/notion'
 import styles from './Posts.module.scss'
-import readingTime from 'reading-time'
 
 type TPost = {
   id: string
