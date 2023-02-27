@@ -18,6 +18,14 @@ const nextConfig = {
     `,
   },
   pageExtensions: ['page.tsx', 'api.tsx'],
+  rewrites: () => {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+      },
+    ]
+  },
 }
 
 export default nextConfig
