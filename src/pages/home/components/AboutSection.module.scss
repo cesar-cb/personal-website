@@ -1,0 +1,49 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(8);
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 810px;
+  }
+}
+
+.aboutHeadline {
+  margin-bottom: spacing(2);
+  line-height: 3rem;
+}
+
+.aboutDescription {
+  color: var(--gray-color);
+}
+
+.aboutImage {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.aboutIcons {
+  display: flex;
+  gap: spacing(4);
+  margin-top: spacing(6);
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tertiary-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    svg {
+      color: var(--primary-color);
+    }
+  }
+}
