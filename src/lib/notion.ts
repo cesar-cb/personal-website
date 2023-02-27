@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client'
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import { NotionToMarkdown } from 'notion-to-md'
+import { ListBlockChildrenResponseResult } from 'notion-to-md/build/types'
 
 const notion = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
@@ -95,7 +96,10 @@ export const getSingleBlogPostBySlug = async (slug: string) => {
   const metadata = getPageMetaData(page)
 
   n2m.setCustomTransformer('embed', async (block) => {
-    const { embed } = block as any
+    const { embed } = block as unknown as {
+      embed: { url?: string; caption: ListBlockChildrenResponseResult }
+    }
+
     if (!embed?.url) return ''
     return `<figure>
     <iframe src="${embed?.url}"></iframe>
