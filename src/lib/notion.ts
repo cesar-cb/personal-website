@@ -3,7 +3,7 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import { NotionToMarkdown } from 'notion-to-md'
 
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
+  auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
 })
 
 export const getAllPublished = async (type?: 'project' | 'article') => {
@@ -19,7 +19,7 @@ export const getAllPublished = async (type?: 'project' | 'article') => {
     : []
 
   const posts = await notion.databases.query({
-    database_id: process.env.DATABASE_ID!,
+    database_id: process.env.NEXT_PUBLIC_DATABASE_ID!,
     filter: {
       and: [
         {
@@ -47,8 +47,6 @@ export const getAllPublished = async (type?: 'project' | 'article') => {
 
 const getPageMetaData = (post: PageObjectResponse) => {
   const getTags = (tags: Array<{ name: string }>) => tags.map((tag) => tag.name)
-
-  console.log(post.properties)
 
   return {
     id: post.id,
@@ -82,7 +80,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion })
 
 export const getSingleBlogPostBySlug = async (slug: string) => {
   const response = await notion.databases.query({
-    database_id: process.env.DATABASE_ID!,
+    database_id: process.env.NEXT_PUBLIC_DATABASE_ID!,
     filter: {
       property: 'Slug',
       formula: {
@@ -106,7 +104,6 @@ export const getSingleBlogPostBySlug = async (slug: string) => {
   })
 
   const mdblocks = await n2m.pageToMarkdown(page.id)
-  console.log({ mdblocks })
   const mdString = n2m.toMarkdownString(mdblocks)
 
   return {
