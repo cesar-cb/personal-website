@@ -12,6 +12,7 @@ const variantsMapping = {
   p: 'p',
   span: 'span',
   label: 'p',
+  body: 'p',
 }
 
 export type TTypographyElements = keyof typeof variantsMapping
@@ -23,6 +24,7 @@ type TProps = {
   className?: string
   lineHeight?: string
   font?: 'heading' | 'body'
+  id?: string
 }
 
 const Typography: FC<TProps> = ({
@@ -31,19 +33,21 @@ const Typography: FC<TProps> = ({
   children,
   className = '',
   font,
+  id,
 }): JSX.Element => {
   const Component = createElement(
     variantsMapping[as],
     {
       className: classNames(
+        className,
         styles.typography,
         styles[`typography--variant-${variant}`],
-        className,
         {
           [styles['typography--variant-heading-font']]: font === 'heading',
           [styles['typography--variant-body-font']]: font === 'body',
         },
       ),
+      id,
     },
     children,
   )

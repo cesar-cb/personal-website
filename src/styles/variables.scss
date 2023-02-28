@@ -1,8 +1,10 @@
 $font-family-primary: 'Nunito', sans-serif;
 $font-family-secondary: 'Lora', serif;
+$font-family-tertiary: 'League Mono', 'Fira Mono', 'Fira Code', monospace;
 
 $heading-font-family: $font-family-primary;
 $body-font-family: $font-family-secondary;
+$font-family-mono: $font-family-tertiary;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -19,6 +21,8 @@ $dark-blue: #004dc1;
 $dark-red: #900000;
 $light-gray: #a3a3a3;
 $dark-gray: #545454;
+$code-color-dark: #011627;
+$code-color-light: #f5f2f0;
 
 $primary-color-dark: $black;
 $secondary-color-dark: $white;

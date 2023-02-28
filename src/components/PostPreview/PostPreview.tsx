@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Typography from 'components/Typography'
 import { BiTag } from 'react-icons/bi'
 import styles from './PostPreview.module.scss'
+import PostInfo from 'components/PostInfo'
 
 type TProps = {
   title: string
@@ -24,14 +25,7 @@ const SectionTitle: FC<TProps> = ({
       <Typography variant="h4" as="h4" className={styles.title}>
         {title}
       </Typography>
-      <time className={styles.date}>
-        <Typography as="p" variant="label">
-          {new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(
-            new Date(date),
-          )}{' '}
-          • {Math.ceil(readingTime)} min de leitura
-        </Typography>
-      </time>
+      <PostInfo date={date} readingTime={readingTime} />
       <Typography className={styles.description}>{description}</Typography>
       <span className={styles.tags}>
         <BiTag className={styles.tagIcon} size={15} />{' '}

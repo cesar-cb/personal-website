@@ -1,0 +1,14 @@
+.anchor {
+  &.active {
+    color: purple;
+  }
+
+  &.title {
+    font-weight: $font-weight-bold;
+  }
+
+  &.subTitle {
+    margin-left: 20px;
+    font-weight: $font-weight-regular;
+  }
+}

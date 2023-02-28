@@ -5,9 +5,11 @@
   --secondary-color: #{$secondary-color-light};
   --tertiary-color: #{$tertiary-color-light};
   --quaternary-color: #{$quaternary-color-light};
+  --code-color: #{$code-color-light};
   --gray-color: #{$dark-gray};
   --background-color: #{$light-theme-background};
   --text-color: #{$light-theme-text};
+  --font-mono: #{$font-family-mono};
 }
 
 [data-theme='dark'] {
@@ -15,9 +17,15 @@
   --secondary-color: #{$secondary-color-dark};
   --tertiary-color: #{$tertiary-color-dark};
   --quaternary-color: #{$quaternary-color-dark};
+  --code-color: #{$code-color-dark};
   --gray-color: #{$light-gray};
   --background-color: #{$dark-theme-background};
   --text-color: #{$dark-theme-text};
+}
+
+*,
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
@@ -37,12 +45,12 @@ h6 {
   font-family: $heading-font-family;
   font-weight: 700;
   line-height: 2.1rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.05rem;
 }
 
 p {
-  line-height: 1.8rem;
-  letter-spacing: 0.15rem;
+  line-height: 1.95rem;
+  letter-spacing: 0.05rem;
 }
 
 h1 {
@@ -88,6 +96,7 @@ a {
   color: inherit;
   text-decoration: none;
   letter-spacing: 0.1rem;
+  word-break: break-all;
 }
 
 pre {
@@ -96,4 +105,30 @@ pre {
 
 img {
   max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background-color: hsl(210deg, 15%, 20%);
+
+  [data-theme='light'] & {
+    background-color: hsl(225deg, 25%, 95%);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: hsl(210deg, 14%, 66%);
+  border: 2px solid hsl(210deg, 15%, 20%);
+
+  [data-theme='light'] & {
+    background-color: hsl(225deg, 12%, 40%);
+    border: 2px solid hsl(225deg, 25%, 95%);
+  }
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
 }

@@ -3,3 +3,8 @@ $SPACING_BASE: 4px !default;
 @function spacing($level) {
   @return $SPACING_BASE * $level;
 }
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
