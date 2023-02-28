@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.aside {
+  position: sticky;
+  top: 148px;
+  max-height: calc(100vh - 148px);
+  margin-right: 100px;
+  max-width: 240px;
+
+  @media screen and (max-width: 1090px) {
+    display: none;
+  }
+}
+
+.postContainer {
+  width: 100%;
+  flex: 1;
+  max-width: 700px;
+}
+
+.postContent {
+  p,
+  pre {
+    margin-bottom: spacing(6);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h4,
+  h6 {
+    margin-bottom: spacing(8);
+    margin-top: spacing(12);
+    scroll-margin-top: 50px;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(4);
+  margin-bottom: spacing(12);
+}
+
+.postDescription {
+  color: var(--gray-color);
+}
+
+.markdown {
+  white-space: pre-wrap;
+}

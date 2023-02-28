@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'League Mono';
+  src: url('/fonts/league-mono/LeagueMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'League Mono';
+  src: url('/fonts/league-mono/LeagueMono-SemiBold.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'League Mono';
+  src: url('/fonts/league-mono/LeagueMono-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+.syntaxContainer {
+  position: relative;
+}
+
+.languageTag {
+  position: absolute;
+  right: 0px;
+  top: -35px;
+  display: block;
+  padding: spacing(2);
+  border-radius: 8px 8px 0 0;
+  font-family: $font-family-mono;
+  font-weight: $font-weight-bold;
+  color: var(--gray-color);
+  background-color: var(--code-color);
+}

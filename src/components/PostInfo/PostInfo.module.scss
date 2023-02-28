@@ -1,0 +1,10 @@
+.date {
+  display: block;
+  margin-bottom: spacing(3);
+  font-weight: $font-weight-semi-bold;
+
+  &.italic {
+    font-style: oblique;
+    font-weight: $font-weight-bold;
+  }
+}

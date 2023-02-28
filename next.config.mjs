@@ -17,6 +17,9 @@ const nextConfig = {
       @import "placeholders.scss";
     `,
   },
+  images: {
+    domains: ['s3.us-west-2.amazonaws.com'],
+  },
   pageExtensions: ['page.tsx', 'api.tsx'],
   rewrites: () => {
     return [
