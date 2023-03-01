@@ -20,12 +20,20 @@ const nextConfig = {
   images: {
     domains: ['s3.us-west-2.amazonaws.com'],
   },
-  pageExtensions: ['page.tsx', 'api.tsx'],
+  pageExtensions: ['page.tsx', 'page.ts', 'api.ts', 'middleware.ts'],
   rewrites: () => {
     return [
       {
         source: '/',
         destination: '/home',
+      },
+      {
+        source: '/:type(projects|articles)',
+        destination: '/posts/:type',
+      },
+      {
+        source: '/:slug',
+        destination: '/post/:slug',
       },
     ]
   },

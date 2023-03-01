@@ -1,8 +1,12 @@
-import { NextPage } from 'next'
+import { GetStaticPropsContext, NextPage } from 'next'
 import Anchor from 'components/Anchor'
 import PostPreview from 'components/PostPreview'
 import DefaultLayout from 'layouts/DefaultLayout'
 import { getAllPublished } from 'lib/notion'
+import cond from 'lodash/cond'
+import stubTrue from 'lodash/stubTrue'
+import constant from 'lodash/constant'
+import isEqual from 'lodash/isEqual'
 import styles from './Posts.module.scss'
 
 type TPost = {
@@ -26,7 +30,7 @@ const Posts: NextPage<TPageProps> = ({ posts }) => {
       <div className={styles.postsContainer}>
         {posts.map((post) => (
           <Anchor
-            href={`/posts/${post.slug}`}
+            href={`/${post.slug}`}
             hideArrow
             className={styles.boxWrapper}
             key={post.id}
@@ -47,8 +51,24 @@ const Posts: NextPage<TPageProps> = ({ posts }) => {
   )
 }
 
-export const getStaticProps = async () => {
-  const data = await getAllPublished()
+export const getStaticPaths = () => {
+  return {
+    paths: [{ params: { type: 'articles' } }, { params: { type: 'projects' } }],
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const typeParam = cond<
+    'projects' | 'articles',
+    'project' | 'article' | undefined
+  >([
+    [(type) => isEqual(type, 'projects'), constant('project')],
+    [(type) => isEqual(type, 'articles'), constant('article')],
+    [stubTrue, constant(undefined)],
+  ])(params?.type as 'projects' | 'articles')
+
+  const data = await getAllPublished(typeParam)
 
   return {
     props: {
