@@ -67,6 +67,12 @@ const Post: NextPage<TPageProps> = ({ post }) => {
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const post = await getSingleBlogPostBySlug(params?.slug as string)
+
+  if (post.markdown === null)
+    return {
+      notFound: true,
+    }
+
   return {
     props: {
       post,

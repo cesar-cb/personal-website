@@ -15,7 +15,7 @@
       transform: translate(var(--tw-translate-x), var(--tw-translate-y))
         rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
         scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-      background-color: rgb(55 55 55 / 50%);
+      background-color: var(--box-hover-color);
     }
   }
 }
@@ -40,6 +40,10 @@
   font-weight: 600;
   letter-spacing: 0.1rem;
   margin-bottom: spacing(2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .tags {
@@ -50,6 +54,10 @@
 .description {
   margin-bottom: spacing(3);
   color: var(--gray-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .tagIcon {

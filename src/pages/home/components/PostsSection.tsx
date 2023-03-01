@@ -2,86 +2,84 @@ import Anchor from 'components/Anchor'
 import Button from 'components/Button'
 import PostPreview from 'components/PostPreview'
 import SectionTitle from 'components/SectionTitle'
+import { FC } from 'react'
 import styles from './PostsSection.module.scss'
 
-const PostsSection = () => {
+type TPost = {
+  id: string
+  title: string
+  tags: Array<string>
+  description: string
+  date: string
+  slug: string
+  type: 'project' | 'article'
+  readingTime: number
+}
+
+type TProps = {
+  articles: Array<TPost>
+  projects: Array<TPost>
+}
+
+const PostsSection: FC<TProps> = ({ articles, projects }) => {
   return (
     <section className={styles.postsContainer}>
       <div className={styles.articles}>
-        <SectionTitle
-          title="last articles"
-          color="secondary"
-          className={styles.articleTitle}
-        />
-        <Anchor
-          href="/blog/how-we-improve-our-perception-of-metrics"
-          hideArrow
-          className={styles.articleItem}
-        >
-          <PostPreview
-            title="How we improve our perception of metrics"
-            description="The initial step to improving your metrics indicators is knowing where the problem is. Today I'm going to talk a little about our solution using Next.JS, Prometheus and Grafana."
-            tags={['nextjs', 'prometheus', 'grafana']}
-            date="2023-02-21T00:00:00.000-03:00"
-            type="article"
-            readingTime={4}
+        <div className={styles.top}>
+          <SectionTitle
+            title="last articles"
+            color="secondary"
+            className={styles.articleTitle}
           />
-        </Anchor>
-
-        <Anchor
-          href="/blog/how-we-improve-our-perception-of-metrics"
-          hideArrow
-          className={styles.articleItem}
-        >
-          <PostPreview
-            title="How we improve our perception of metrics"
-            description="The initial step to improving your metrics indicators is knowing where the problem is. Today I'm going to talk a little about our solution using Next.JS, Prometheus and Grafana."
-            tags={['nextjs', 'prometheus', 'grafana']}
-            date="2023-02-21T00:00:00.000-03:00"
-            type="article"
-            readingTime={4}
-          />
-        </Anchor>
-        <Button href="/posts" element="a" outline arrow>
+          {articles.map((article) => (
+            <Anchor
+              key={article.id}
+              href={`/${article.slug}`}
+              hideArrow
+              className={styles.articleItem}
+            >
+              <PostPreview
+                title={article.title}
+                description={article.description}
+                tags={article.tags}
+                date={article.date}
+                type="article"
+                readingTime={article.readingTime}
+              />
+            </Anchor>
+          ))}
+        </div>
+        <Button href="/articles" element="a" outline arrow>
           view all articles
         </Button>
       </div>
 
       <div className={styles.projects}>
-        <SectionTitle
-          title="last projects"
-          color="secondary"
-          className={styles.articleTitle}
-        />
-        <Anchor
-          href="/blog/how-we-improve-our-perception-of-metrics"
-          hideArrow
-          className={styles.articleItem}
-        >
-          <PostPreview
-            title="How we improve our perception of metrics"
-            description="The initial step to improving your metrics indicators is knowing where the problem is. Today I'm going to talk a little about our solution using Next.JS, Prometheus and Grafana."
-            tags={['nextjs', 'prometheus', 'grafana']}
-            date="2023-02-21T00:00:00.000-03:00"
-            type="project"
-            readingTime={4}
+        <div className={styles.top}>
+          <SectionTitle
+            title="last projects"
+            color="secondary"
+            className={styles.articleTitle}
           />
-        </Anchor>
-        <Anchor
-          href="/blog/how-we-improve-our-perception-of-metrics"
-          hideArrow
-          className={styles.articleItem}
-        >
-          <PostPreview
-            title="How we improve our perception of metrics"
-            description="The initial step to improving your metrics indicators is knowing where the problem is. Today I'm going to talk a little about our solution using Next.JS, Prometheus and Grafana."
-            tags={['nextjs', 'prometheus', 'grafana']}
-            date="2023-02-21T00:00:00.000-03:00"
-            type="project"
-            readingTime={4}
-          />
-        </Anchor>
-        <Button href="/posts" element="a" outline arrow>
+          {projects.map((project) => (
+            <Anchor
+              key={project.id}
+              href={`/${project.slug}`}
+              hideArrow
+              className={styles.articleItem}
+            >
+              <PostPreview
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                date={project.date}
+                type="project"
+                readingTime={project.readingTime}
+              />
+            </Anchor>
+          ))}
+        </div>
+        <Button href="/projects" element="a" outline arrow>
           view all projects
         </Button>
       </div>

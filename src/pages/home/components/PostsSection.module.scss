@@ -21,6 +21,10 @@
 .articles,
 .projects {
   max-width: 570px;
+
+  > a {
+    width: max-content;
+  }
 }
 
 .articleTitle {
@@ -30,8 +34,19 @@
 .articleItem {
   display: block;
   margin-bottom: spacing(12);
+  width: 100%;
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  margin-bottom: spacing(12);
 }

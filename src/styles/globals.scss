@@ -7,6 +7,7 @@
   --quaternary-color: #{$quaternary-color-light};
   --code-color: #{$code-color-light};
   --gray-color: #{$dark-gray};
+  --box-hover-color: #{$color-box-hover-light};
   --background-color: #{$light-theme-background};
   --text-color: #{$light-theme-text};
   --font-mono: #{$font-family-mono};
@@ -19,6 +20,7 @@
   --quaternary-color: #{$quaternary-color-dark};
   --code-color: #{$code-color-dark};
   --gray-color: #{$light-gray};
+  --box-hover-color: #{$color-box-hover-dark};
   --background-color: #{$dark-theme-background};
   --text-color: #{$dark-theme-text};
 }
@@ -96,7 +98,6 @@ a {
   color: inherit;
   text-decoration: none;
   letter-spacing: 0.1rem;
-  word-break: break-all;
 }
 
 pre {
