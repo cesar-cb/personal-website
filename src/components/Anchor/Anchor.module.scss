@@ -1,7 +1,22 @@
 .anchor {
-  display: inline-block;
+  display: inline-flex;
   width: fit-content;
   cursor: pointer;
+  gap: spacing(2);
+
+  &.leftArrow {
+    flex-direction: row-reverse;
+
+    .arrow {
+      transform: scaleX(-1);
+    }
+
+    &:hover {
+      .arrow {
+        transform: scaleX(-1) translateX(4px);
+      }
+    }
+  }
 
   &:hover {
     .arrow {
@@ -12,6 +27,5 @@
 
 .arrow {
   display: inline-block;
-  margin-left: spacing(2);
   transition: border $theme-transition, transform $theme-transition;
 }

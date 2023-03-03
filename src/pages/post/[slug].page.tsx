@@ -25,11 +25,23 @@ type TPost = {
 
 type TPageProps = {
   post: TPost
+  type: 'project' | 'article'
 }
 
-const Post: NextPage<TPageProps> = ({ post }) => {
+const Post: NextPage<TPageProps> = ({ post, type }) => {
+  const typeMap = {
+    project: {
+      href: '/projects',
+      text: 'Projetos',
+    },
+    article: {
+      href: '/articles',
+      text: 'Artigos',
+    },
+  }[type]
+
   return (
-    <DefaultLayout>
+    <DefaultLayout backButton={{ href: typeMap.href, text: typeMap.text }}>
       <div className={styles.container}>
         <aside className={styles.aside}>
           <div>
@@ -65,6 +77,15 @@ const Post: NextPage<TPageProps> = ({ post }) => {
   )
 }
 
+export const getStaticPaths = async () => {
+  const posts = await getAllPublished()
+  const paths = posts.map(({ slug }) => ({ params: { slug } }))
+  return {
+    paths,
+    fallback: 'blocking',
+  }
+}
+
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const post = await getSingleBlogPostBySlug(params?.slug as string)
 
@@ -76,17 +97,9 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   return {
     props: {
       post,
+      type: post.metadata.type,
     },
     revalidate: 60,
-  }
-}
-
-export const getStaticPaths = async () => {
-  const posts = await getAllPublished()
-  const paths = posts.map(({ slug }) => ({ params: { slug } }))
-  return {
-    paths,
-    fallback: 'blocking',
   }
 }
 

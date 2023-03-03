@@ -1,4 +1,7 @@
 .anchor {
+  font-size: toRem(14);
+  font-weight: $font-weight-regular;
+
   &.active {
     color: purple;
   }
