@@ -7,6 +7,39 @@ const notion = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
 })
 
+const n2m = new NotionToMarkdown({ notionClient: notion })
+
+const getPageMetaData = (post: PageObjectResponse) => {
+  const getTags = (tags: Array<{ name: string }>) => tags.map((tag) => tag.name)
+
+  return {
+    id: post.id,
+    title: (post.properties.Name as { title: Array<{ plain_text: string }> })
+      .title[0].plain_text,
+    tags: getTags(
+      (
+        post.properties.Tags as unknown as {
+          multi_select: Array<{ name: string }>
+        }
+      ).multi_select,
+    ),
+    description: (
+      post.properties.Description as {
+        rich_text: Array<{ plain_text: string }>
+      }
+    ).rich_text[0].plain_text,
+    date: (post.properties.Date as unknown as { date: { start: string } }).date
+      .start,
+    slug: (
+      post.properties.Slug as {
+        rich_text: Array<{ plain_text: string }>
+      }
+    ).rich_text[0].plain_text,
+    type: (post.properties.Type as { select: { name: string } }).select.name,
+    readingTime: (post.properties.ReadingTime as { number: number }).number,
+  }
+}
+
 export const getAllPublished = async (type?: 'project' | 'article') => {
   const typeFilter = type
     ? [
@@ -46,39 +79,6 @@ export const getAllPublished = async (type?: 'project' | 'article') => {
     return getPageMetaData(post as PageObjectResponse)
   })
 }
-
-const getPageMetaData = (post: PageObjectResponse) => {
-  const getTags = (tags: Array<{ name: string }>) => tags.map((tag) => tag.name)
-
-  return {
-    id: post.id,
-    title: (post.properties.Name as { title: Array<{ plain_text: string }> })
-      .title[0].plain_text,
-    tags: getTags(
-      (
-        post.properties.Tags as unknown as {
-          multi_select: Array<{ name: string }>
-        }
-      ).multi_select,
-    ),
-    description: (
-      post.properties.Description as {
-        rich_text: Array<{ plain_text: string }>
-      }
-    ).rich_text[0].plain_text,
-    date: (post.properties.Date as unknown as { date: { start: string } }).date
-      .start,
-    slug: (
-      post.properties.Slug as {
-        rich_text: Array<{ plain_text: string }>
-      }
-    ).rich_text[0].plain_text,
-    type: (post.properties.Type as { select: { name: string } }).select.name,
-    readingTime: (post.properties.ReadingTime as { number: number }).number,
-  }
-}
-
-const n2m = new NotionToMarkdown({ notionClient: notion })
 
 export const getSingleBlogPostBySlug = async (slug: string) => {
   const response = await notion.databases.query({
@@ -125,7 +125,7 @@ export const getSingleBlogPostBySlug = async (slug: string) => {
     if (!video?.external?.url) return ''
     if (video?.external?.url.includes('youtube')) {
       const regExp =
-        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
+        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
 
       const videoId = video?.external?.url.match(regExp)?.[7] as string
 

@@ -12,7 +12,7 @@ const TableOfContents: FC<TProps> = ({ markdown }) => {
   const headings = getHeadings(markdown)
 
   return (
-    <>
+    <div>
       <Typography variant="h4" as="p" font="heading">
         Tabela de conteúdo
       </Typography>
@@ -26,7 +26,7 @@ const TableOfContents: FC<TProps> = ({ markdown }) => {
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

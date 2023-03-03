@@ -3,11 +3,18 @@
 }
 
 .aside {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(8);
   position: sticky;
   top: 148px;
   max-height: calc(100vh - 148px);
   margin-right: 100px;
   max-width: 240px;
+
+  > a {
+    font-size: toRem(20);
+  }
 
   @media screen and (max-width: 1090px) {
     display: none;

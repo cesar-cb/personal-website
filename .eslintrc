@@ -5,6 +5,7 @@
     "jest": true
   },
   "extends": [
+    "airbnb-typescript-prettier",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",

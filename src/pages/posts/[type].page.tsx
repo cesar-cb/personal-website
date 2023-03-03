@@ -40,7 +40,6 @@ const Posts: NextPage<TPageProps> = ({ posts }) => {
               title={post.title}
               description={post.description}
               tags={post.tags}
-              type={post.type}
               date={post.date}
               readingTime={post.readingTime}
             />

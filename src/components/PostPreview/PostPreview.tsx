@@ -1,14 +1,13 @@
 import { FC } from 'react'
 import Typography from 'components/Typography'
 import { BiTag } from 'react-icons/bi'
-import styles from './PostPreview.module.scss'
 import PostInfo from 'components/PostInfo'
+import styles from './PostPreview.module.scss'
 
 type TProps = {
   title: string
   description: string
   tags: Array<string>
-  type: 'article' | 'project'
   date: string
   readingTime: number
 }

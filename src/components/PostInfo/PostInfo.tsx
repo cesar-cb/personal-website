@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Typography from 'components/Typography'
-import styles from './PostInfo.module.scss'
 import classNames from 'classnames'
+import styles from './PostInfo.module.scss'
 
 type TProps = {
   date: string
