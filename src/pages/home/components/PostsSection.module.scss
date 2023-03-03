@@ -4,15 +4,15 @@
   gap: spacing(8);
   margin-top: spacing(22);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1250px) {
     margin-top: spacing(12);
-
+    width: 100%;
     flex-direction: column;
   }
 }
 
 .articles {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1250px) {
     border-bottom: 1px solid $white;
     padding-bottom: spacing(8);
   }
@@ -20,7 +20,9 @@
 
 .articles,
 .projects {
-  max-width: 570px;
+  @media screen and (min-width: 1251px) {
+    max-width: 570px;
+  }
 
   > a {
     width: max-content;
