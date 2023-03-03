@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from 'react'
 import Header from 'components/Header'
-import styles from './Layout.module.scss'
 import classNames from 'classnames'
-import Anchor from 'components/Anchor'
+import BackButton from 'components/BackButton'
+import styles from './Layout.module.scss'
 
 type TProps = {
   small?: boolean
@@ -26,18 +26,14 @@ const DefaultLayout: FC<PropsWithChildren<TProps>> = ({
       <Header />
       <div className={styles.layoutWrapper}>
         <main className={classes}>
-          <>
-            {backButton && (
-              <Anchor
-                href={backButton.href}
-                leftArrow
-                className={styles.backButton}
-              >
-                {backButton.text}
-              </Anchor>
-            )}
-            {children}
-          </>
+          {backButton && (
+            <BackButton
+              href={backButton.href}
+              text={backButton.text}
+              className={styles.backButton}
+            />
+          )}
+          {children}
         </main>
       </div>
       {/* <footer>footer</footer> */}

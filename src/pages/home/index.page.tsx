@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import DefaultLayout from 'layouts/DefaultLayout'
+import { getAllPublished } from 'lib/notion'
 import AboutSection from './components/AboutSection'
 import PostsSection from './components/PostsSection'
-import { getAllPublished } from 'lib/notion'
 
 type TPost = {
   id: string

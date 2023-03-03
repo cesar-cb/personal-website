@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import classNames from 'classnames'
 import Anchor from 'components/Anchor'
-import styles from './Item.module.scss'
 import { slugify } from 'lib/text'
+import styles from './Item.module.scss'
 
 type TProps = {
   itemName: string

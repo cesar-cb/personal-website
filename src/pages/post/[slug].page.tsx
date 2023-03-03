@@ -5,6 +5,7 @@ import rehypeRaw from 'rehype-raw'
 import TableOfContents from 'components/TableOfContents'
 import Typography from 'components/Typography'
 import PostInfo from 'components/PostInfo'
+import BackButton from 'components/BackButton'
 import { getAllPublished, getSingleBlogPostBySlug } from 'lib/notion'
 import { getMarkdownComponents } from 'lib/markdown'
 import DefaultLayout from 'layouts/DefaultLayout'
@@ -41,12 +42,11 @@ const Post: NextPage<TPageProps> = ({ post, type }) => {
   }[type]
 
   return (
-    <DefaultLayout backButton={{ href: typeMap.href, text: typeMap.text }}>
+    <DefaultLayout>
       <div className={styles.container}>
         <aside className={styles.aside}>
-          <div>
-            <TableOfContents markdown={post.markdown} />
-          </div>
+          <BackButton href={typeMap.href} text={typeMap.text} />
+          <TableOfContents markdown={post.markdown} />
         </aside>
         <article className={styles.postContainer}>
           <div className={styles.hero}>

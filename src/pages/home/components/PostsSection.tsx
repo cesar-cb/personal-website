@@ -43,7 +43,6 @@ const PostsSection: FC<TProps> = ({ articles, projects }) => {
                 description={article.description}
                 tags={article.tags}
                 date={article.date}
-                type="article"
                 readingTime={article.readingTime}
               />
             </Anchor>
@@ -73,7 +72,6 @@ const PostsSection: FC<TProps> = ({ articles, projects }) => {
                 description={project.description}
                 tags={project.tags}
                 date={project.date}
-                type="project"
                 readingTime={project.readingTime}
               />
             </Anchor>
