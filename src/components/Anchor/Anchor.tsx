@@ -14,6 +14,7 @@ type TConditionalProps =
 
 export type TProps = {
   hideArrow?: boolean
+  leftArrow?: boolean
   className?: string
 } & TConditionalProps
 
@@ -21,10 +22,13 @@ const Anchor: FC<TProps> = ({
   element = 'a',
   children,
   hideArrow = false,
+  leftArrow = false,
   className,
   ...rest
 }) => {
-  const anchorClasses = classNames(className, styles.anchor)
+  const anchorClasses = classNames(className, styles.anchor, {
+    [styles.leftArrow]: leftArrow,
+  })
 
   if (element === 'a') {
     const { linkProps, anchorProps } = splitAnchorLinkProps({

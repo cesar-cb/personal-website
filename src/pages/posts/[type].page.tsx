@@ -26,7 +26,7 @@ type TPageProps = {
 
 const Posts: NextPage<TPageProps> = ({ posts }) => {
   return (
-    <DefaultLayout small>
+    <DefaultLayout backButton={{ href: '/', text: 'Início' }}>
       <div className={styles.postsContainer}>
         {posts.map((post) => (
           <Anchor
