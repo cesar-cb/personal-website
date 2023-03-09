@@ -5,7 +5,7 @@ import { BiChevronDown } from 'react-icons/bi'
 import Anchor from 'components/Anchor'
 import Typography from 'components/Typography'
 import useClickOutside from 'hooks/onClickOutside'
-import styles from './Dropdown.module.scss'
+import styles from './PopupMenu.module.scss'
 
 type TItem = {
   href?: string
@@ -18,7 +18,7 @@ type TProps = {
   className?: string
 }
 
-const Dropdown: FC<TProps> = ({ items, className }) => {
+const PopupMenu: FC<TProps> = ({ items, className }) => {
   const [isVisible, setIsVisible] = useState(false)
   const navRef = useRef(null)
 
@@ -31,6 +31,12 @@ const Dropdown: FC<TProps> = ({ items, className }) => {
       [styles.visible]: isVisible,
     },
   )
+
+  const handleOnClick = (onClick?: () => void) => {
+    setIsVisible(false)
+
+    if (onClick) onClick()
+  }
 
   return (
     <div className={dropdownContainerClasses}>
@@ -57,7 +63,7 @@ const Dropdown: FC<TProps> = ({ items, className }) => {
               <Anchor
                 hideArrow
                 href={item.href}
-                onClick={item.onClick}
+                onClick={() => handleOnClick(item.onClick)}
                 element={item.href ? 'a' : 'button'}
               >
                 {item.text}
@@ -71,4 +77,4 @@ const Dropdown: FC<TProps> = ({ items, className }) => {
   )
 }
 
-export default Dropdown
+export default PopupMenu

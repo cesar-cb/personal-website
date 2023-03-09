@@ -25,6 +25,19 @@
   --text-color: #{$dark-theme-text};
 }
 
+// NProgress
+#nprogress .bar {
+  background: var(--secondary-color) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--secondary-color), 0 0 5px var(--secondary-color) !important;
+}
+
+#nprogress .spinner-icon {
+  display: none !important;
+}
+
 *,
 html {
   scroll-behavior: smooth !important;

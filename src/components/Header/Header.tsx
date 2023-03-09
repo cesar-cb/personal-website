@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Anchor from 'components/Anchor'
 import dynamic from 'next/dynamic'
 import Typography from 'components/Typography'
-import Dropdown from 'components/Dropdown'
+import PopupMenu from 'components/PopupMenu'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import styles from './Header.module.scss'
@@ -58,7 +58,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className={styles.left}>
-          <Dropdown items={menuItems} className={styles.dropdown} />
+          <PopupMenu items={menuItems} className={styles.dropdown} />
           <ToggleTheme />
         </div>
       </div>
