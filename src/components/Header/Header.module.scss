@@ -17,3 +17,52 @@
   max-width: $max-container-size;
   margin: 0 auto;
 }
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: spacing(4);
+}
+
+.deskNav {
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.dropdown {
+  display: block;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  gap: spacing(2);
+}
+
+.navItem {
+  display: flex;
+  gap: spacing(2);
+
+  &.activeItem {
+    color: var(--tertiary-color);
+  }
+
+  &::after {
+    content: '•';
+    color: var(--secondary-color);
+  }
+
+  &:last-child {
+    &::after {
+      content: '';
+    }
+  }
+}
