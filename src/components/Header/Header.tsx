@@ -15,17 +15,14 @@ const menuItems = [
   {
     href: '/about',
     text: 'sobre mim',
-    onClick: console.log,
   },
   {
     href: '/articles',
     text: 'artigos',
-    onClick: console.log,
   },
   {
     href: '/projects',
     text: 'projetos',
-    onClick: console.log,
   },
 ]
 
@@ -51,7 +48,7 @@ const Header = () => {
                   [styles.activeItem]: isActive(item.href),
                 })}
               >
-                <Anchor href={item.href} hideArrow onClick={item.onClick}>
+                <Anchor href={item.href} hideArrow>
                   <Typography as="span" variant="p" font="heading">
                     {item.text}
                   </Typography>
