@@ -32,5 +32,7 @@
 
 .arrow {
   display: inline-block;
-  transition: border $theme-transition, transform $theme-transition;
+  transition:
+    border $theme-transition,
+    transform $theme-transition;
 }

@@ -16,7 +16,9 @@
   span {
     display: inline-block;
     margin-left: spacing(2);
-    transition: border $theme-transition, transform $theme-transition;
+    transition:
+      border $theme-transition,
+      transform $theme-transition;
   }
 
   &:hover {

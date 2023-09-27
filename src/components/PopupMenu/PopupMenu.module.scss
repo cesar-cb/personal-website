@@ -34,7 +34,9 @@
   background: var(--primary-color);
   border-radius: 8px;
   border: 1px solid #373737;
-  transition: opacity $theme-transition, visibility $theme-transition;
+  transition:
+    opacity $theme-transition,
+    visibility $theme-transition;
 
   .visible & {
     visibility: visible;
@@ -83,7 +85,9 @@
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(4px);
   height: 100%;
-  transition: opacity $theme-transition, visibility $theme-transition;
+  transition:
+    opacity $theme-transition,
+    visibility $theme-transition;
 
   .visible & {
     visibility: visible;

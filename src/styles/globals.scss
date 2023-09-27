@@ -31,7 +31,9 @@
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px var(--secondary-color), 0 0 5px var(--secondary-color) !important;
+  box-shadow:
+    0 0 10px var(--secondary-color),
+    0 0 5px var(--secondary-color) !important;
 }
 
 #nprogress .spinner-icon {

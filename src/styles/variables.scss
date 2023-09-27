@@ -42,10 +42,14 @@ $dark-theme-text: $secondary-color-dark;
 $light-theme-background: $secondary-color-dark;
 $light-theme-text: $primary-color-dark;
 
-$box-shadow: 0px 2px 2px rgb(0 0 0 / 20%), 0px 5px 12px rgb(0 0 0 / 10%);
+$box-shadow:
+  0px 2px 2px rgb(0 0 0 / 20%),
+  0px 5px 12px rgb(0 0 0 / 10%);
 
 $max-container-size: 1440px;
 
 $theme-transition: 0.35s ease-in-out 0s;
-$body-theme-transition: color $theme-transition, background $theme-transition;
+$body-theme-transition:
+  color $theme-transition,
+  background $theme-transition;
 $text-theme-transition: color $theme-transition;
