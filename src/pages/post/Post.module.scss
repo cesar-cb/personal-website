@@ -32,6 +32,9 @@
   pre {
     margin-bottom: spacing(6);
   }
+  pre + pre {
+    margin-top: spacing(14);
+  }
 
   h1,
   h2,
