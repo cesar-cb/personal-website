@@ -21,14 +21,12 @@ const AboutSection = () => {
 
       <div className={styles.aboutRight}>
         <Typography variant="h2" as="h3" className={styles.aboutHeadline}>
-          Front-end developer. <br /> Passionate about code and solutions
+          Front-end developer. <br /> Passionate about code and solutions.
         </Typography>
         <Typography as="p" variant="p" className={styles.aboutDescription}>
-          I am a 25 years old Front End Developer with 6+ years of professional
-          experience. Self-taught, currently focused on React Experience with
-          CSS methodologies like BEM and RSCSS (Styled Components for React)
-          Deep JS concepts like Prototypes, Closures, Functional Programming,
-          Asynchronous Programming and Event Loop
+          Front End Developer with over 6 years of professional experience.
+          I&apos;m currently focused on React and Next.js, but always passionate
+          about learning new skills.
         </Typography>
         <div className={styles.aboutIcons}>
           <Link href="mailto:cesar.boaventura61@gmail.com">

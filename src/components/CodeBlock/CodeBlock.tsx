@@ -32,7 +32,7 @@ const CodeBlock: FC<TProps> = ({ language, codestring }) => {
         customStyle={{
           fontFamily: 'var(--font-mono)',
           margin: '0 -32px 0',
-          borderRadius: '8px',
+          borderRadius: '8px 0px 8px 8px',
         }}
         codeTagProps={{
           style: {

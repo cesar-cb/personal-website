@@ -14,15 +14,15 @@ const ToggleTheme = dynamic(() => import('components/ToggleTheme'), {
 const menuItems = [
   {
     href: '/about',
-    text: 'sobre mim',
+    text: 'about',
   },
   {
     href: '/articles',
-    text: 'artigos',
+    text: 'articles',
   },
   {
     href: '/projects',
-    text: 'projetos',
+    text: 'projects',
   },
 ]
 

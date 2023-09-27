@@ -17,11 +17,11 @@ const PostInfo: FC<TProps> = ({ date, readingTime, italic = false }) => {
   return (
     <time className={classes}>
       <Typography as="p" variant="label" font="heading">
-        Postado em{' '}
+        Posted on{' '}
         {new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium' }).format(
           new Date(date),
         )}{' '}
-        • {Math.ceil(readingTime)} min de leitura
+        • {Math.ceil(readingTime)} min read
       </Typography>
     </time>
   )
