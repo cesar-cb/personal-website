@@ -37,6 +37,7 @@ const PostsSection: FC<TProps> = ({ articles, projects }) => {
               href={`/${article.slug}`}
               hideArrow
               className={styles.articleItem}
+              hover={false}
             >
               <PostPreview
                 title={article.title}

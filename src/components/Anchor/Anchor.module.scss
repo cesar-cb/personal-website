@@ -8,6 +8,7 @@
   padding: 0;
   margin: 0;
   font-family: $font-family-primary;
+  transition: color 0.2s ease;
 
   &.leftArrow {
     flex-direction: row-reverse;
@@ -27,6 +28,12 @@
     .arrow {
       transform: translateX(4px);
     }
+  }
+}
+
+.hover {
+  &:hover {
+    color: var(--gray-color);
   }
 }
 

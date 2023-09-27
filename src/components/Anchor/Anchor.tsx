@@ -16,6 +16,7 @@ export type TProps = {
   hideArrow?: boolean
   leftArrow?: boolean
   className?: string
+  hover?: boolean
 } & TConditionalProps
 
 const Anchor: FC<TProps> = ({
@@ -24,10 +25,12 @@ const Anchor: FC<TProps> = ({
   hideArrow = false,
   leftArrow = false,
   className,
+  hover = true,
   ...rest
 }) => {
   const anchorClasses = classNames(className, styles.anchor, {
     [styles.leftArrow]: leftArrow,
+    [styles.hover]: hover,
   })
 
   if (element === 'a') {

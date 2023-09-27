@@ -26,7 +26,7 @@ type TPageProps = {
 
 const Posts: NextPage<TPageProps> = ({ posts }) => {
   return (
-    <DefaultLayout backButton={{ href: '/', text: 'Início' }}>
+    <DefaultLayout backButton={{ href: '/', text: 'Home' }}>
       <div className={styles.postsContainer}>
         {posts.map((post) => (
           <Anchor
@@ -34,6 +34,7 @@ const Posts: NextPage<TPageProps> = ({ posts }) => {
             hideArrow
             className={styles.boxWrapper}
             key={post.id}
+            hover={false}
           >
             <PostPreview
               key={post.id}
