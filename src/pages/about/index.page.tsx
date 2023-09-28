@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className={styles.aboutPage}>
       <Head>
-        <title>Cesar Boaventura • Front-End Engineer</title>
+        <title>Sobre - Cesar Boaventura</title>
         <meta
           name="description"
           content="Cesar Boaventura, Front-End Engineer"

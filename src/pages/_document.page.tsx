@@ -17,6 +17,30 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://cesarboaventura.dev/" />
+          <meta property="og:title" content="Cesar Boaventura" />
+          <meta
+            property="og:description"
+            content="Cesar Boaventura, Front-End Engineer"
+          />
+          <meta property="og:image" content="https://i.imgur.com/m7tdsRY.png" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://cesarboaventura.dev/" />
+          <meta property="twitter:title" content="Cesar Boaventura" />
+          <meta
+            property="twitter:description"
+            content="Cesar Boaventura, Front-End Engineer"
+          />
+          <meta
+            property="twitter:image"
+            content="https://i.imgur.com/m7tdsRY.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="https://i.imgur.com/mzVNiHV.png"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
